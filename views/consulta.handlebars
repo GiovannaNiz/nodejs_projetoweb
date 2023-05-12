@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-14 bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Sistema WEB</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="/">Cadastrar </a>
+                        <a class="nav-item nav-link active" href="/consulta">Consultar</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-14 bg-light">
+            &nbsp;
+            <p class="text-start fs-5">Cadastrar - Agendamento de Potenciais Clientes</p>
+            <p class="text-start fs-6">Sistema Utilizado para agendamento de serviços.</p>
+            <p>
+                <div class="container-center">
+                    <div class="row bg-dark">
+                        <div class="col-2 text-light">
+                            Nome: 
+                        </div>
+                        <div class="col-2 text-light">
+                            Telefone:
+                        </div>
+                        <div class="col-2 text-light">
+                            Origem: 
+                        </div>
+                        <div class="col-2 text-light">
+                            Data do Contato: 
+                        </div>
+                        <div class="col text-light">
+                            Observação: 
+                        </div>
+                    </div>
+                    {{#each post}}
+                    {{#dataValues}}
+                     &nbsp;
+                    <div class="row">
+                        <div class="col">
+                            {{nome}}
+                        </div>
+                        <div class="col">
+                            {{telefone}}
+                        </div>
+                        <div class="col">
+                            {{origem}}
+                        </div>
+                        <div class="col">
+                            {{data_contato}}
+                        </div>
+                        <div class="col">
+                            {{observacao}}
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-dark"><a href="/editar/{{id}}" style="color:inherit">Editar</a></button>
+                            <button type="button" class="btn btn-dark"><a href="/excluir/{{id}}" style="color:inherit">Excluir</a></button>
+                        </div>
+                    </div>
+                    {{/dataValues}}
+                {{/each}}
+            </div>
+            </p>
+        </div>
+    </div>
+</div>

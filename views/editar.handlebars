@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Sistema WEB</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link active" href="/">Cadastrar </a>
+                        <a class="nav-item nav-link" href="/consulta">Consultar</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col bg-light">
+            &nbsp;
+            <p class="text-start fs-5">Cadastrar - Agendamento de Potenciais Clientes</p>
+            <p class="text-start fs-6">Sistema Utilizado para agendamento de serviços.</p>
+            <p>
+                {{#each post}}
+                {{#dataValues}}
+                <form action="/atualizar" method="POST">
+                    <div class="mb-3 text-start">
+                        <input type="hidden" name="id" class="form-control" id="nome" value="{{id}}">
+                        <label class="form-label"><strong>Nome:</strong></label>
+                        <input type="name" name="nome" class="form-control" id="nome" value="{{nome}}">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="form-label"><strong>Telefone:</strong></label>
+                            <input type="text" name="telefone" class="form-control" id="telefone" value="{{telefone}}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-label"><strong>Origem:</strong></label>
+                            <select name="origem" class="form-select" aria-label="Default select example">
+                                <option value="celular" selected>Celular</option>
+                                <option value="whatsapp" selected>WhatsApp</strong></option>
+                                <option value="telefone_fixo" selected>Telefone Fixo</option>
+                            </select>
+                        </div>
+                    </div>
+                    &nbsp;
+                    <div class="mb-3 text-start">
+                        <label class="form-label"><strong>Data do Contato:</strong></label>
+                        <input type="date" name="data_contato" class="form-control" id="data_contato" value="{{data_contato}}">
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label"><strong>Observação:</strong></label>
+                        <textarea name="observacao" class="form-control" placeholder="" id="observacao">{{telefone}}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Atualizar</button>
+                </form>
+                {{/dataValues}}
+                {{/each}}
+            </p>
+        </div>   
+    </div>
+</div>
